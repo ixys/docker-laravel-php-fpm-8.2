@@ -87,6 +87,9 @@ RUN docker-php-ext-configure gd \
             --with-freetype \
             --enable-gd-jis-conv \
  && docker-php-ext-install -j$(nproc) gd ctype exif intl mysqli pcntl xml \
+ # Install pdo_mysql
+ && docker-php-ext-configure pdo_mysql --with-zlib-dir=/usr \
+ && docker-php-ext-install -j$(nproc) pdo_mysql \
  # Install redis
  && pecl install redis \
  && docker-php-ext-enable redis \
