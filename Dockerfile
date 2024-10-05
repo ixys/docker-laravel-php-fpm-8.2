@@ -24,28 +24,29 @@ RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.ke
             doppler \
             wget \
             curl \
+            autoconf \
+            cyrus-sasl-dev \
+            g++ \
             git \
-            nodejs \
-            npm \
-            vim \
             grep \
+            imagemagick-dev \
             imagemagick \
-            libgd \
             libffi \
+            libgd \
             libgmpxx \
+            libgsasl-dev \
             libintl \
             libjpeg-turbo \
             libmcrypt-dev \
-            libxml2-dev \
             libssh2 \
-            imagemagick-dev \
-            pcre-dev \
             libtool \
+            libxml2-dev \
+            libzip \
             make \
-            autoconf \
-            g++ \
-            cyrus-sasl-dev \
-            libgsasl-dev \
+            nodejs \
+            npm \
+            pcre-dev \
+            vim \
             yaml \
             zlib
 
@@ -54,14 +55,12 @@ RUN apk update \
  && apk upgrade \
  && apk add --no-cache --virtual .build-deps \
             $PHPIZE_DEPS \
-            autoconf \
             bc \
             bzip2-dev \
             cyrus-sasl-dev \
             freetds-dev \
             freetype-dev \
             icu-dev \
-            oniguruma-dev \
             imagemagick-dev \
             libc-dev \
             libjpeg-turbo-dev \
@@ -73,6 +72,7 @@ RUN apk update \
             libxslt-dev \
             libzip-dev \
             mysql-client \
+            oniguruma-dev \
             openssl-dev \
             pcre-dev \
             tini \
