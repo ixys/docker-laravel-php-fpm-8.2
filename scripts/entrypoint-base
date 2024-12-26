@@ -9,4 +9,9 @@ echo "► Starting Main Entrypoint..."
 
 # Run Dockerfile's CMD (default: $> php-fpm )
 echo "► Starting application with doppler... cmd: ${@}"
-exec doppler run --command="$@"
+if [ -z "${DOPPLER_TOKEN+x}" ]; then
+  echo "Doppler token non défini. Commande exécutée sans Doppler."
+  exec "$@"
+else
+  exec doppler run --command="$@"
+fi

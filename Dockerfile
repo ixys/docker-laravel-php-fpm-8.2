@@ -26,6 +26,7 @@ RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.ke
             curl \
             autoconf \
             cyrus-sasl-dev \
+            fcgi \
             g++ \
             git \
             grep \
