@@ -13,5 +13,6 @@ if [ -z "${DOPPLER_TOKEN+x}" ]; then
   echo "Doppler token non défini. Commande exécutée sans Doppler."
   exec "$@"
 else
-  exec doppler run --command="$@"
+  # Pass the command and its arguments to doppler using `--` so they are not treated as a single string
+  exec doppler run -- "$@"
 fi
